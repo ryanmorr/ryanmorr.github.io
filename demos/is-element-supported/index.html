@@ -35,7 +35,7 @@ span {
 }
 
 .label {
-    width: 150px;
+    width: 300px;
 }
 
 .supported {
@@ -51,7 +51,7 @@ span {
 <body>
 
 <header>
-    <p>This test case checks the current browser's support for HTML elements currently defined in the specification. It works by comparing an element's internal [[Class]] property to the <code>HTMLUnknownElement</code> interface. Unsupported elements should derive from the <code>HTMLUnknownElement</code> interface and therefore reveal their lack of native support. This project can be found at <a href="https://github.com/ryanmorr/is-element-supported">https://github.com/ryanmorr/is-element-supported</a>.</p>
+    <p>This test case checks the current browser's support for HTML elements currently defined in the specification as well as custom elements. It works by looking at an element's internal [[Class]] property to see which interface it implements. Unsupported elements should derive from the <code>HTMLUnknownElement</code> interface and therefore reveal their lack of native support. Custom elements not registered via <code>document.registerElement</code> should derive from the <code>HTMLElement</code> interface or the <code>HTMLUnknownElement</code> interface if a invalid tag name is used. This project can be found at <a href="https://github.com/ryanmorr/is-element-supported">https://github.com/ryanmorr/is-element-supported</a>.</p>
 </header>
 
 <ul id="list"></ul>
@@ -66,6 +66,21 @@ for (var i = 0, len = tags.length; i < len; i++) {
     support = isElementSupported(tag), 
     className = support ? 'supported' : 'unsupported';
     html += '<li><span class="label"><span>'+tag+'</span>:</span><span class="'+className+'">'+(support ? 'true' : 'false').toUpperCase()+'</span></li>';
+}
+
+if (document.registerElement) {
+    document.registerElement('custom-element');
+    tags = [
+        'custom-element (registered)',
+        'custom-element-2 (unregistered)'
+    ];
+    for (var i = 0, len = tags.length; i < len; i++) {
+        var tag = tags[i],
+        parts = tag.split(' '),
+        support = isElementSupported(parts[0]), 
+        className = support ? 'supported' : 'unsupported';
+        html += '<li><span class="label"><span>'+tag+'</span>:</span><span class="'+className+'">'+(support ? 'true' : 'false').toUpperCase()+'</span></li>';
+    }
 }
 
 list.innerHTML = html;
