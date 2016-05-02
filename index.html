@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Ryan Morr Projects</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
 
@@ -23,8 +23,8 @@ var tpl = [
     '</section>'
 ].join('');
 
-loadJSON('https://api.github.com/users/ryanmorr/repos', function(repos){
-    repos.sort (function (a, b) {
+loadJSON('https://api.github.com/users/ryanmorr/repos', function(repos) {
+    repos.sort(function (a, b) {
         return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
     }); 
     var frag = document.createDocumentFragment();
@@ -41,23 +41,19 @@ loadJSON('https://api.github.com/users/ryanmorr/repos', function(repos){
     document.body.appendChild(frag);
 });
 
-function interpolate(tpl, values){
+function interpolate(tpl, values) {
     return tpl.replace(/\{\{\s*(.+?)\s*\}\}/g, function(all, token){
         return values[token];
     });
 }
 
-function parseHTML(html){
+function parseHTML(html) {
     var div = document.createElement('div');
-    var frag = document.createDocumentFragment();
     div.innerHTML = html;
-    while(div.firstChild){
-        frag.appendChild(div.firstChild);
-    }
-    return frag;
+    return div.firstChild;
 }
 
-function getDate(str){
+function getDate(str) {
     var months = [
         'Jan', 'Feb', 'Mar',
         'Apr', 'May', 'June', 'July',
