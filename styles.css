@@ -34,7 +34,7 @@ h1::after {
     content: '';
     display: block;
     margin: 10px auto 0 auto;
-    width: 200px;
+    width: 250px;
     height: 3px;
     background-color: #fff;
     border-radius: 2px;
@@ -45,6 +45,8 @@ h1::after {
     display: block;
     position: relative;
     padding: 3em;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project:nth-child(odd) {
