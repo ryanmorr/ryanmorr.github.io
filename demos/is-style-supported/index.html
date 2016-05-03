@@ -101,8 +101,15 @@ styles = {
         'antiquewhite', 
         'currentColor'
     ],
-    'column-count': null,
-    'column-gap': null,
+    'column-count': [
+        '3',
+        'auto'
+    ],
+    'column-gap': [
+        'normal',
+        '3px',
+        '2.5em'
+    ],
     'display': [
         'inline', 
         'block', 
@@ -123,6 +130,56 @@ styles = {
         'table-cell', 
         'table-column', 
         'table-row'
+    ],
+    'filter': [
+        'url("filters.svg#filter-id")',
+        'blur(5px)',
+        'brightness(0.4)',
+        'contrast(200%)',
+        'drop-shadow(16px 16px 20px blue)',
+        'grayscale(50%)',
+        'hue-rotate(90deg)',
+        'invert(75%)',
+        'opacity(25%)',
+        'saturate(30%)',
+        'sepia(60%)',
+        'contrast(175%) brightness(3%)'
+    ],
+    'flex-basis': [
+        '10em', 
+        '3px',
+        'auto',
+        'fill',
+        'max-content',
+        'min-content',
+        'fit-content',
+        'content'
+    ],
+    'grid': [
+        'none',
+        'subgrid',
+        '100px 1fr',
+        '200px repeat(auto-fill, 100px) 300px',
+        'minmax(100px, max-content) repeat(auto-fill, 200px) 20%',
+        'row',
+        'column',
+        'dense',
+        'row dense',
+        'column dense',
+        'row 200px',
+        'column 80vmax',
+        'row dense 30em',
+        'column dense min-content',
+        'dense minmax(300px, max-content)',
+        'row 400px / 40%',
+        'column auto / minmax(mix-content, 1fr)'
+    ],
+    'object-fit': [
+        'fill',
+        'contain',
+        'cover',
+        'none',
+        'scale-down'
     ],
     'outline': [
         'ridge thick black'
