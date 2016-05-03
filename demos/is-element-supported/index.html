@@ -51,7 +51,7 @@ span {
 <body>
 
 <header>
-    <p>This test case checks the current browser's support for HTML elements currently defined in the specification as well as custom elements. It works by looking at an element's internal [[Class]] property to see which interface it implements. Unsupported elements should derive from the <code>HTMLUnknownElement</code> interface, revealing their lack of native support. Custom elements not registered via <code>document.registerElement</code> should derive from the <code>HTMLElement</code> interface or the <code>HTMLUnknownElement</code> interface if an invalid tag name is used. This project can be found at <a href="https://github.com/ryanmorr/is-element-supported">https://github.com/ryanmorr/is-element-supported</a>.</p>
+    <p>This test case checks the current browser's support for HTML elements currently defined in the specification as well as custom elements. It works by examining an element's constructor to see which interface it inherits from. Unsupported elements should derive from the <code>HTMLUnknownElement</code> interface, revealing their lack of native support. Custom elements not registered via <code>document.registerElement</code> should derive from the <code>HTMLElement</code> interface or the <code>HTMLUnknownElement</code> interface if an invalid tag name is used. This project can be found at <a href="https://github.com/ryanmorr/is-element-supported">https://github.com/ryanmorr/is-element-supported</a>.</p>
 </header>
 
 <ul id="list"></ul>
