@@ -41,12 +41,15 @@ h1::after {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 }
 
+#container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .project {
     display: block;
     position: relative;
     padding: 3em;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .project:nth-child(odd) {

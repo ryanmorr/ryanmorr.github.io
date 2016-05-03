@@ -12,7 +12,11 @@
     <h1>Projects</h1>
 </header>
 
+<div id="container"></div>
+
 <script>
+var container = document.getElementById('container');
+
 var tpl = [
     '<section class="project">',
         '<h2 class="title"><a href="{{url}}">{{name}}</a></h2>',
@@ -38,7 +42,7 @@ loadJSON('https://api.github.com/users/ryanmorr/repos', function(repos) {
             stars: repo.stargazers_count
         })));
     });
-    document.body.appendChild(frag);
+    container.appendChild(frag);
 });
 
 function interpolate(tpl, values) {
