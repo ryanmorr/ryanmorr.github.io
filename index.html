@@ -39,7 +39,7 @@ loadJSON('https://api.github.com/users/ryanmorr/repos', function(repos) {
             description: repo.description,
             language: repo.language,
             updated: getDate(repo.updated_at),
-            stars: repo.stargazers_count
+            stars: repo.stargazers_count.toLocaleString()
         })));
     });
     container.appendChild(frag);
