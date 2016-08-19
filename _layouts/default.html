@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{{ page.title }} | Ryan Morr</title>
+    <meta name="description" content="Web developer based in Barrie, Ontario, Canada. I love to create dynamic web applications with a keen interest in JavaScript, Node.js, CSS, and HTML5." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="/favicon.ico?ver=2">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/prettify.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+<header id="site-header">
+    <div class="vertical">
+        <div class="block">
+            <h1 class="blog-title">Ryan Morr</h1>
+            <h2 class="blog-description">Web developer based in Barrie, Ontario, Canada. I love to create dynamic web applications with a keen interest in JavaScript, Node.js, CSS, and HTML5.</h2>
+            <section class="icon-links">
+                <a href="https://github.com/ryanmorr">
+                    <i class="fa fa-github"></i>
+                    <span class="hidden">Github</span>
+                </a>
+                <a href="http://codepen.io/ryanmorr/">
+                    <i class="fa fa-codepen"></i>
+                    <span class="hidden">CodePen</span>
+                </a>
+                <a href="https://twitter.com/ryanmmorr">
+                    <i class="fa fa-twitter"></i>
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a href="http://ryanmorr.com/contact">
+                    <i class="fa fa-folder-open"></i>
+                    <span class="hidden">Projects</span>
+                </a>
+            </section>
+        </div>
+    </div>
+</header>
+
+{{ content }}
+
+<footer id="site-footer">
+    <div class="vertical">
+        <div class="block">
+            <section>
+                <p class="footer-links">
+                    <a href="/">Home</a> |
+                    <a href="/about">About</a> |
+                    <a href="/projects">Projects</a> |
+                    <a href="https://github.com/ryanmorr">GitHub</a> |
+                    <a href="http://codepen.io/ryanmorr/">CodePen</a> | 
+                    <a href="https://twitter.com/ryanmmorr">Twitter</a> | 
+                </p>
+            </section>
+            <p>Copyright &copy; {{ site.time | date: "%Y" }} {{ site.author }}.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/prettify.js"></script>
+
+<script>
+// PrettyPrint
+addEventListener('load', prettyPrint, false);
+// Twitter Share
+(function(){
+    var share = document.querySelector('.share');
+    if(share){
+        share.addEventListener('click', function(e){
+            e.preventDefault();
+            var width = 500,
+            height = 300,
+            left = (screen.width / 2) - (width / 2), 
+            top = (screen.height / 2) - (height / 2);
+            window.open(this.href, 'twitter-share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+        });
+    }
+})();
+// Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-6902038-1']);
+_gaq.push(['_trackPageview']);
+(function(){
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</body>
+</html>
