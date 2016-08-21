@@ -2,4 +2,16 @@
 layout: default
 title: Ryan Morr
 ---
-<h1>Hello World</h1>
+
+<main class="block">
+    {% for post in site.posts %}
+        <article class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                {{ post.excerpt }}
+            </section>
+        </article>
+    {% endfor %}
+</main>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<main class="post-main">
+    <article class="post">
+        <header class="post-header block">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <ul class="meta clear">
+                <li><i class="fa fa-calendar"></i><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time></li>    
+            </ul>
+        </header>
+        <section class="post-content">
+            {{ content }}
+        </section>
+    </article>
+</main>
