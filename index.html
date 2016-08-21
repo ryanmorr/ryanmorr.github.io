@@ -15,3 +15,13 @@ title: Ryan Morr
         </article>
     {% endfor %}
 </main>
+
+<nav class="pagination" role="pagination">
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.previous_page %}
+        <a class="button newer-posts" href="{{ paginator.previous_page_path }}"><i class="fa fa-angle-double-left"></i> Newer Posts</a>
+    {% endif %}
+    {% if paginator.next_page %}
+        <a class="button older-posts" href="{{ paginator.next_page_path }}">Older Posts <i class="fa fa-angle-double-right"></i></a>
+    {% endif %}
+</nav>
