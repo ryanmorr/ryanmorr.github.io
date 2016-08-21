@@ -1,2 +1,22 @@
+# Site settings
 name: Ryan Morr
+email: rm.morr@gmail.com
+description: "Web developer based in Barrie, Ontario, Canada. I love to create dynamic web applications with a keen interest in JavaScript, Node.js, CSS, and HTML5."
+baseurl: ""
+url: "http://ryanmorr.com"
+
+# Build settings
+
 markdown: kramdown
+permalink: /:title/
+
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
