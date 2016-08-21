@@ -9,6 +9,8 @@ url: "http://ryanmorr.com"
 
 markdown: kramdown
 permalink: /:title/
+paginate: 5
+paginate_path: "/page/:num/"
 
 gems:
   - jekyll-sitemap
