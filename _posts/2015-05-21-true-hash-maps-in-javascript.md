@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "True Hash Maps in JavaScript"
-date: 2015-05-21 19:59:10
+date: 2015-05-21
 ---
 
 Using an object literal as a simple means to storing key-value pairs is common place within JavaScript. However, an object literal is not a true hash map and therefore poses potential liabilities if used in the wrong manner. While JavaScript may not offer native hash maps (at least not cross-browser), there is a superior alternative to object literals to capture the desired functionality without the pitfalls.
