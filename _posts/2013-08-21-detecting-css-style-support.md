@@ -3,6 +3,7 @@ layout: post
 title: Detecting CSS Style Support
 date: 2013-08-21
 project: https://github.com/ryanmorr/is-style-supported
+demo: ryanmorr.com/demos/is-style-supported
 categories:
   - Articles
   - Projects
