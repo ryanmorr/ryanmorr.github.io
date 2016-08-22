@@ -19,7 +19,7 @@ CSS tends to be in a constant phase of transition as new specifications are cont
 
 ## Feature Queries
 
-To help contend with this very problem, the W3C has drafted a new specification for an `@supports` rule. It&#8217;s used similarly to an if statement by providing a condition and nested CSS statements that are only rendered if the condition is met:
+To help contend with this very problem, the W3C has drafted a new specification for an `@supports` rule. It's used similarly to an if statement by providing a condition and nested CSS statements that are only rendered if the condition is met:
 
 <div class="code-block">
   <pre class="prettyprint lang-css">
@@ -44,7 +44,7 @@ It is encouraging to know that the W3C seems to have acknowledged the discrepanc
 
 ## Feature Testing Styles
 
-Due to the lack of support for the `@supports`, we&#8217;ll require a JavaScript-based fallback solution to mimic its capabilities. Since browser detection is entirely unreliable and unnecessary, we need to find something better. Instead we will employ feature testing to ascertain the browser&#8217;s capability of computing the property and value we are trying to determine support for. The idea here is simple, if the browser can interpret the style than it must be supported, otherwise it must not.
+Due to the lack of support for the `@supports`, we'll require a JavaScript-based fallback solution to mimic its capabilities. Since browser detection is entirely unreliable and unnecessary, we need to find something better. Instead we will employ feature testing to ascertain the browser's capability of computing the property and value we are trying to determine support for. The idea here is simple, if the browser can interpret the style than it must be supported, otherwise it must not.
 
 For properties, examining the `style` object of an element and ensuring that the property exists will reliably resolve support in all mainstream browsers:
 
@@ -55,7 +55,7 @@ transform in element.style;
 </pre>
 </div>
 
-That was easy, but to feature test support for assignable property values we need to get a little more creative. Manipulating an element&#8217;s `style` object is unreliable as it will have no effect for unsupported declarations and instead will behave like a simple object literal property-value assignment. Alternatively, adding the property and value as an inline style using an element&#8217;s `style.cssText` property will invoke the CSS interpreter to determine support. Then inspecting the `style` object will reveal that unsupported property values will always return an empty string:
+That was easy, but to feature test support for assignable property values we need to get a little more creative. Manipulating an element's `style` object is unreliable as it will have no effect for unsupported declarations and instead will behave like a simple object literal property-value assignment. Alternatively, adding the property and value as an inline style using an element's `style.cssText` property will invoke the CSS interpreter to determine support. Then inspecting the `style` object will reveal that unsupported property values will always return an empty string:
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
@@ -135,7 +135,7 @@ Then we can create style declarations such as the following to take advantage of
 </pre>
 </div>
 
-This type of solution is not ideal because of its obtrusive nature, violating the separation of concerns, but it&#8217;s a solution nonetheless.
+This type of solution is not ideal because of its obtrusive nature, violating the separation of concerns, but it's a solution nonetheless.
 
 ## Conclusion
 

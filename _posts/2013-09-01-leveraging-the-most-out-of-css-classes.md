@@ -15,11 +15,11 @@ To harness the most out of CSS classes is to take advantage of what truly is the
 
 ## Benefits
 
-One benefit in particular is in an element&#8217;s ability to support multiple class declarations at a time which, in a sense, facilitates a multiple inheritance of sorts. This gives us the unique ability within CSS to separate an element&#8217;s various states and differing characteristics to create a more modular approach in our stylesheets. By doing so, we can create classes that are in no way specific to any one element but merely represent a characteristic or group of characteristics that any element can adopt provided the class name.
+One benefit in particular is in an element's ability to support multiple class declarations at a time which, in a sense, facilitates a multiple inheritance of sorts. This gives us the unique ability within CSS to separate an element's various states and differing characteristics to create a more modular approach in our stylesheets. By doing so, we can create classes that are in no way specific to any one element but merely represent a characteristic or group of characteristics that any element can adopt provided the class name.
 
 Inheritance can also play a key role in the design process, by letting the cascade flow through the DOM we can leverage the styles of ancestor elements and avoid a rigid implementation with redundant style declarations. If we employ this technique, we can easily alter state of descendant elements by adding or removing a class to or from that of an ancestor element while avoiding the need to traverse the DOM to manipulate each descendant element individually in JavaScript.
 
-As far as client-side scripting is concerned, classes are the preferred window to CSS from JavaScript. By hiding styling characteristics behind class names, JavaScript can merely alter an element&#8217;s `className` attribute to activate or deactivate a specific state of that element. In this case, JavaScript is not concerned with what styling influences are taking place on page load or even after event triggered changes in state. This allows us to quickly consult our CSS to make minor styling changes rather than JavaScript.
+As far as client-side scripting is concerned, classes are the preferred window to CSS from JavaScript. By hiding styling characteristics behind class names, JavaScript can merely alter an element's `className` attribute to activate or deactivate a specific state of that element. In this case, JavaScript is not concerned with what styling influences are taking place on page load or even after event triggered changes in state. This allows us to quickly consult our CSS to make minor styling changes rather than JavaScript.
 
 ## Abstract Classes
 
@@ -42,7 +42,7 @@ Abstract classes are those that do not necessarily reflect a state or any specif
 </pre>
 </div>
 
-As you can see these examples are of a very generic nature both in name and styling influences as they represent a very high level abstraction. Typically classes such as these should always be combined with others as part of an element&#8217;s class declaration to round out its structure, positioning, state, and skin.
+As you can see these examples are of a very generic nature both in name and styling influences as they represent a very high level abstraction. Typically classes such as these should always be combined with others as part of an element's class declaration to round out its structure, positioning, state, and skin.
 
 The advantage of abstract classes do not come solely in their ability to apply styles to an element in a modular fashion, but also in the relationships they create. Think of it from the perspective of object-oriented programming, provided the overlay class, an element will inherit the role of an overlay. For example: 
 
@@ -101,7 +101,7 @@ Similar to abstract classes, character classes work on a lower level context and
 </pre>
 </div>
 
-Typically character classes do not need to be overridden in a lower level context as they should be mutually exclusive from your structure and skin. You&#8217;ll also want to avoid depending on character classes to target descendants as part of a selector statement. Doing so will expand the scope of the class beyond its original purpose, this can snow ball into further dependencies that result in a loss of modularity and flexibility. 
+Typically character classes do not need to be overridden in a lower level context as they should be mutually exclusive from your structure and skin. You'll also want to avoid depending on character classes to target descendants as part of a selector statement. Doing so will expand the scope of the class beyond its original purpose, this can snow ball into further dependencies that result in a loss of modularity and flexibility. 
 
 Exploiting character classes to the fullest means easy adoption of shared markup conventions and allow for ease in code integration. By putting together a small component library, you will find that they will not only provide reusable classes throughout an entire application but also amongst projects.
 

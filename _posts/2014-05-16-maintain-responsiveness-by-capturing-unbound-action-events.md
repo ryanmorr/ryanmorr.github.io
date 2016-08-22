@@ -13,17 +13,17 @@ tags:
   - UX
 ---
 
-Responsiveness is critical for modern client-side applications. When a user clicks on something, they expect a result and some are not too keen on waiting. At the very least, a user&#8217;s actions should be acknowledged via a loading indicator or the like. The absolute worse case scenario is having nothing happen at all. This is often the case pre-initialization. The user interacts with a component without any effect or even error message because, unbeknownst to the user, the page is still in the process of initialization and event handlers had yet to be bound to their correlative elements. It&#8217;s an issue I have encountered on numerous occasions. A less technically inclined user may assume the site is broken, that makes for a bad first impression. For this article, I will be exploring a solution to this problem by way of capturing user triggered action events pre-initialization to maintain responsiveness.
+Responsiveness is critical for modern client-side applications. When a user clicks on something, they expect a result and some are not too keen on waiting. At the very least, a user's actions should be acknowledged via a loading indicator or the like. The absolute worse case scenario is having nothing happen at all. This is often the case pre-initialization. The user interacts with a component without any effect or even error message because, unbeknownst to the user, the page is still in the process of initialization and event handlers had yet to be bound to their correlative elements. It's an issue I have encountered on numerous occasions. A less technically inclined user may assume the site is broken, that makes for a bad first impression. For this article, I will be exploring a solution to this problem by way of capturing user triggered action events pre-initialization to maintain responsiveness.
 
 ## The Concept
 
 Typically, progressive enhancement is the obvious answer to this problem and should still be instituted as a bulletproof fallback. However, if you wish to serve a highly dynamic application and want to limit page reloads or avoid them all together, than it may not be the ideal solution.
 
-Progressive enhancement aside, there are two viable approaches you can take to resolve the problem. You could present the user with a loading mask until initialization has completed to inhibit interaction with the interface, such is the case with GMail. Or you can capture the action events, such as clicks and form submissions. The latter can be achieved by utilizing event delegation to listen for user triggered events that bubble up to the document element. This way the event can be handled immediately or queued for processing once the page has finished initializing while still acknowledging the user&#8217;s actions. All that is required is a means of distinguishing between events that should be intercepted by JavaScript and those that should not. It wouldn&#8217;t be to practical to prevent a hyperlink from following the link that otherwise shouldn&#8217;t be interrupted. 
+Progressive enhancement aside, there are two viable approaches you can take to resolve the problem. You could present the user with a loading mask until initialization has completed to inhibit interaction with the interface, such is the case with GMail. Or you can capture the action events, such as clicks and form submissions. The latter can be achieved by utilizing event delegation to listen for user triggered events that bubble up to the document element. This way the event can be handled immediately or queued for processing once the page has finished initializing while still acknowledging the user's actions. All that is required is a means of distinguishing between events that should be intercepted by JavaScript and those that should not. It wouldn't be to practical to prevent a hyperlink from following the link that otherwise shouldn't be interrupted. 
 
 ## Introducing ActionOberver
 
-The following solution, I&#8217;ve dubbed `ActionObserver`, observes click events and form submissions to capture user interactions. It is a simplified solution that could be easily expanded to include support for key events to detect user keystrokes, touch events to detect interactivity, or scroll events to handle dynamic progressive loading. The code in its most basic form looks like the following:
+The following solution, I've dubbed `ActionObserver`, observes click events and form submissions to capture user interactions. It is a simplified solution that could be easily expanded to include support for key events to detect user keystrokes, touch events to detect interactivity, or scroll events to handle dynamic progressive loading. The code in its most basic form looks like the following:
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
@@ -103,7 +103,7 @@ ActionObserver.bind('search', function(event, element){
 </pre>
 </div>
 
-Ideally, you should inline the code in the head of the document for JavaScript rich applications. This will block rendering, but you can avoid the extra HTTP request and get instant notification of user requests before the DOM has finished loading or scripts have finished initializing. So it&#8217;s a bit of a trade-off. Check out the project on [GitHub](https://github.com/ryanmorr/action-observer) for more information and the latest version of the code.
+Ideally, you should inline the code in the head of the document for JavaScript rich applications. This will block rendering, but you can avoid the extra HTTP request and get instant notification of user requests before the DOM has finished loading or scripts have finished initializing. So it's a bit of a trade-off. Check out the project on [GitHub](https://github.com/ryanmorr/action-observer) for more information and the latest version of the code.
 
 ## Lazy Loading & Instantiation
 

@@ -16,7 +16,7 @@ The dawn of HTML5 brought about a whole bunch of new elments. However, like CSS3
 
 ## HTML Interfaces
 
-It is the [standardization](http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-011100101) of the `HTMLElement` object interface and the inherent hierarchy that makes it possible to reliably resolve an element&#8217;s type and therefore support. Included in the hierarchy is the `HTMLUnknownElement` interface which acts as a catch-all for invalid HTML elements. In other words, any element you define for which there is no associated interface in the `HTMLElement` hierarchy, will default to an instance of the generic `HTMLUnknownElement` interface. This is true whether you create the element via `document.createElement` or explicitly write it in your markup. This means we can leverage `Object.prototype.toString` to divulge an element&#8217;s internal `[[Class]]` property to ascertain if it is an unknown element:
+It is the [standardization](http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-011100101) of the `HTMLElement` object interface and the inherent hierarchy that makes it possible to reliably resolve an element's type and therefore support. Included in the hierarchy is the `HTMLUnknownElement` interface which acts as a catch-all for invalid HTML elements. In other words, any element you define for which there is no associated interface in the `HTMLElement` hierarchy, will default to an instance of the generic `HTMLUnknownElement` interface. This is true whether you create the element via `document.createElement` or explicitly write it in your markup. This means we can leverage `Object.prototype.toString` to divulge an element's internal `[[Class]]` property to ascertain if it is an unknown element:
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
@@ -33,7 +33,7 @@ Bear in mind that it may still be prudent to employ more complicated feature tes
 
 ## Inconsistencies
 
-Unfortunately, there are [inconsistencies](http://kangax.github.io/jstests/html5_elements_interfaces_test/) with some elements and their associated interfaces. Some elements that are actually supported (or at least reported to be), inherit from the `HTMLUnknownElement` interface. For example, according to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#Browser_compatibility) and [caniuse.com](http://caniuse.com/#feat=html5semantic), the `time` element has been supported in Chrome since version 33. Yet its internal `[[Class]]` property points to the `HTMLUnknownElement` interface instead of the `HTMLTimeElement` interface as it should. As such, the `datetime` attribute inherent to the `time` element doesn&#8217;t exist:
+Unfortunately, there are [inconsistencies](http://kangax.github.io/jstests/html5_elements_interfaces_test/) with some elements and their associated interfaces. Some elements that are actually supported (or at least reported to be), inherit from the `HTMLUnknownElement` interface. For example, according to [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#Browser_compatibility) and [caniuse.com](http://caniuse.com/#feat=html5semantic), the `time` element has been supported in Chrome since version 33. Yet its internal `[[Class]]` property points to the `HTMLUnknownElement` interface instead of the `HTMLTimeElement` interface as it should. As such, the `datetime` attribute inherent to the `time` element doesn't exist:
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">

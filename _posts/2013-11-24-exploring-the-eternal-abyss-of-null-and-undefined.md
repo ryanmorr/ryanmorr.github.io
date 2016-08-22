@@ -14,7 +14,7 @@ When discussing primitive data types in JavaScript, most are aware of the basics
 
 ## Understanding Null and Undefined
 
-In JavaScript, `null` is a literal and language keyword that represents no discernible object value. In other words, it&#8217;s an indication of “no value”. While similar, `undefined` actually represents the non-existence of a value. Both are completely immutable, have no properties or methods, and are incapable of property assignment. In fact, attempting to access or define a property will raise a `TypeError`. They are, as their names suggest, completely void of value.
+In JavaScript, `null` is a literal and language keyword that represents no discernible object value. In other words, it's an indication of “no value”. While similar, `undefined` actually represents the non-existence of a value. Both are completely immutable, have no properties or methods, and are incapable of property assignment. In fact, attempting to access or define a property will raise a `TypeError`. They are, as their names suggest, completely void of value.
 
 The absence of value lends to their characterization as _falsy_ values, meaning they evaluate to false when employed in the context of a conditional, such as an `if` statement. Comparing the two with other falsy values using an _equality operator_ (==) reveals that they are not equal to anything except themselves:
 

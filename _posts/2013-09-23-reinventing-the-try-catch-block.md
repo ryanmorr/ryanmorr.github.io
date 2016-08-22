@@ -20,7 +20,7 @@ The try/catch block is a unique construct, both in how it works and what it is c
 
 What makes this construct unique is in the manner in which the catch block augments the scope chain. Rather than creating a new execution context and pushing it to the top of the execution stack, the catch block will actually create a new variable object and place it ahead of the activation object in the scope chain of the current execution context. This creates what is known as a _dynamic scope_, similar to the effect of the `with` statement, which lends to its bad reputation as well. As a result, the error object passed to the catch block does not exist outside of it, even within the same scope. It is created at the start of the catch clause and destroyed at the end of it. This type of manipulation of the scope chain is the primary contributor to the performance hit.
 
-At this point you may be thinking that as long as an error is not raised than performance should not be affected, a fair assumption, but you&#8217;d be wrong. Some JavaScript engines, such as V8 (Chrome) do not optimize functions that make use of a try/catch block as the optimizing compiler will skip it when encountered. No matter what context you use a try/catch block in, there will always be an inherent performance hit, quite possibly a substantial one.
+At this point you may be thinking that as long as an error is not raised than performance should not be affected, a fair assumption, but you'd be wrong. Some JavaScript engines, such as V8 (Chrome) do not optimize functions that make use of a try/catch block as the optimizing compiler will skip it when encountered. No matter what context you use a try/catch block in, there will always be an inherent performance hit, quite possibly a substantial one.
 
 These limitations are well documented, for instance, look at the following test cases: <http://jsperf.com/try-catch-block-performance-comparison> and <http://jsperf.com/try-catch-block-loop-performance-comparison>. The former confirms that not only is there up to a 90% loss in performance when no error even occurs, but the declination is significantly greater when an error is raised and control enters the catch block. The latter test case proves that the loss is compounded in loops, where most performance intensive operations typically occur.
 
@@ -85,7 +85,7 @@ When we measure the performance of this custom solution against a native try/cat
 
 ## Drawbacks
 
-Despite some of the advantages to this approach, it is not without its caveats. One such disadvantage is when the “catch” handler is invoked in the case of an error and another error occurs within the handler, then both errors will propagate to the browser. This happens because control still hasn&#8217;t left the `window.onerror` event handler from the initial error, raising another error will stop execution and resort to the default behaviour. This makes nested `tryCatch` calls infeasible.
+Despite some of the advantages to this approach, it is not without its caveats. One such disadvantage is when the “catch” handler is invoked in the case of an error and another error occurs within the handler, then both errors will propagate to the browser. This happens because control still hasn't left the `window.onerror` event handler from the initial error, raising another error will stop execution and resort to the default behaviour. This makes nested `tryCatch` calls infeasible.
 
 Another drawback inherent to `window.onerror` is that once an error is encountered, the browser will stop execution following the invocation of the event handler. Any code following the `tryCatch` call will be skipped as the interpreter will instead proceed to the next script block (`<script></script>`) if it exists. This is unavoidable, only a catch block is capable of truly suppressing an error without halting execution. Of course, if no further execution is required than this drawback is irrelevant.
 
@@ -93,17 +93,17 @@ One concern that should be cleared up by the new specification are the question 
 
 > Note that some/many `error` events do not trigger `window.onerror`, you have to listen for them specifically.
 
-Unfortunately, Mozilla doesn&#8217;t get any more specific in terms of which errors are actually caught by `window.onerror`. According to the [Internet Explorer documentation](http://msdn.microsoft.com/en-us/library/ie/cc197053%28v=vs.85%29.aspx), the following errors trigger the event:
+Unfortunately, Mozilla doesn't get any more specific in terms of which errors are actually caught by `window.onerror`. According to the [Internet Explorer documentation](http://msdn.microsoft.com/en-us/library/ie/cc197053%28v=vs.85%29.aspx), the following errors trigger the event:
 
 >   * Run-time script error, such as an invalid object reference or security violation.
 >   * Error while downloading an object, such as an image.
 >   * Windows Internet Explorer 9. An error occurs while fetching media data.
 
-This seems to be consistent with all browsers, and testing has yet to reveal an exception. That&#8217;s not bad, but the lack of a clear definition is a little troubling, therefore the question still remains.
+This seems to be consistent with all browsers, and testing has yet to reveal an exception. That's not bad, but the lack of a clear definition is a little troubling, therefore the question still remains.
 
 ## Conclusion
 
-The performance benefits of this function are debatable. However, one genuine benefit to this method is in the numerous opportunities for customization. The ability to tailor the `tryCatch` function for different use cases and meet various requirements you otherwise couldn&#8217;t achieve with a try/catch block.
+The performance benefits of this function are debatable. However, one genuine benefit to this method is in the numerous opportunities for customization. The ability to tailor the `tryCatch` function for different use cases and meet various requirements you otherwise couldn't achieve with a try/catch block.
 
 You could look at it as a suitable median between a native try/catch block and a traditional `window.onerror` event handler. On one hand, you can mimic a try/catch block but gain the opportunity to enhance functionality while also proving more beneficial in performance critical situations in some circumstances. On the other hand, it can narrow the scope of a `window.onerror` event to specific fragments of code for more effective debugging. Kind of a best of both worlds solution.
 

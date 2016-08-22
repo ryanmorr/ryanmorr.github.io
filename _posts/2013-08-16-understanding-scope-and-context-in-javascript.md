@@ -23,7 +23,7 @@ Every function invocation has both a scope and a context associated with it. Fun
 
 ## Variable Scope
 
-A variable can be defined in either local or global scope, which establishes the variables&#8217; accessibility from different scopes during runtime. Any defined global variable, meaning any variable declared outside of a function body will live throughout runtime and can be accessed and altered in any scope. Local variables exist only within the function body of which they are defined and will have a different scope for every call of that function. There it is subject for value assignment, retrieval, and manipulation only within that call and is not accessible outside of that scope.
+A variable can be defined in either local or global scope, which establishes the variables' accessibility from different scopes during runtime. Any defined global variable, meaning any variable declared outside of a function body will live throughout runtime and can be accessed and altered in any scope. Local variables exist only within the function body of which they are defined and will have a different scope for every call of that function. There it is subject for value assignment, retrieval, and manipulation only within that call and is not accessible outside of that scope.
 
 JavaScript presently does not support block scope which is the ability to define a variable to the scope of an if statement, switch statement, for loop, or while loop. This means the variable will not be accessible outside the opening and closing curly braces of the block. Currently any defined variables inside a block are accessible outside the block. However, this is soon to change, the `let` keyword has officially been added to the ES6 specification. It can be used alternatively to the `var` keyword and supports the declaration of block scope local variables.
 
@@ -62,7 +62,7 @@ When called as an unbound function, `this` will default to the global context or
 
 JavaScript is a single threaded language, meaning only one task can be executed at a time. When the JavaScript interpreter initially executes code, it first enters into a global execution context by default. Each invocation of a function from this point on will result in the creation of a new execution context. 
 
-This is where confusion often sets in, the term “execution context” is actually for all intents and purposes referring more to scope and not context as previously discussed. It is an unfortunate naming convention, however it is the terminology as defined by the ECMAScript specification, so we&#8217;re kinda stuck with it.
+This is where confusion often sets in, the term “execution context” is actually for all intents and purposes referring more to scope and not context as previously discussed. It is an unfortunate naming convention, however it is the terminology as defined by the ECMAScript specification, so we're kinda stuck with it.
 
 Each time a new execution context is created it is appended to the top of the _execution stack_. The browser will always execute the current execution context that is atop the execution stack. Once completed, it will be removed from the top of the stack and control will return to the execution context below. 
 
@@ -94,7 +94,7 @@ Running the preceding code will result in the nested functions being executed al
 
 Name conflicts amongst variables between different execution contexts are resolved by climbing up the scope chain, moving locally to globally. This means that local variables with the same name as variables higher up the scope chain take precedence. 
 
-To put it simply, each time you attempt to access a variable within a function&#8217;s execution context, the look-up process will always begin with its own variable object. If the identifier is not found in the variable object, the search continues into the scope chain. It will climb up the scope chain examining the variable object of every execution context looking for a match to the variable name.
+To put it simply, each time you attempt to access a variable within a function's execution context, the look-up process will always begin with its own variable object. If the identifier is not found in the variable object, the search continues into the scope chain. It will climb up the scope chain examining the variable object of every execution context looking for a match to the variable name.
 
 ## Closures
 
@@ -226,9 +226,9 @@ Array.prototype.slice.call(arguments, 1);
 </pre>
 </div>
 
-What is interesting to note here is that the `arguments` object is not actually an array at all, however it is often described as an array-like object much like a nodelist (anything returned by `element.childNodes`). They contain a length property and indexed values but they are still not arrays, and subsequently don&#8217;t support any of the native methods of arrays such as `slice` and `push`. However, because of their similar behavior, the methods of `Array` can be adopted or hijacked, if you will, and executed in the context of an array-like object as is the case above. 
+What is interesting to note here is that the `arguments` object is not actually an array at all, however it is often described as an array-like object much like a nodelist (anything returned by `element.childNodes`). They contain a length property and indexed values but they are still not arrays, and subsequently don't support any of the native methods of arrays such as `slice` and `push`. However, because of their similar behavior, the methods of `Array` can be adopted or hijacked, if you will, and executed in the context of an array-like object as is the case above. 
 
-This technique of adopting another object&#8217;s methods also applies to object-orientation when emulating classical based inheritance in JavaScript: 
+This technique of adopting another object's methods also applies to object-orientation when emulating classical based inheritance in JavaScript: 
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
@@ -239,8 +239,8 @@ MyClass.prototype.init = function(){
 </pre>
 </div>
 
-By invoking the method of the superclass (`MySuperClass`) in the context of an instance of a subclass (`MyClass`), we can mimic the ability of calling a method&#8217;s super to fully exploit this powerful design pattern.
+By invoking the method of the superclass (`MySuperClass`) in the context of an instance of a subclass (`MyClass`), we can mimic the ability of calling a method's super to fully exploit this powerful design pattern.
 
 ## Conclusion
 
-It is important to understand these concepts before you begin to approach advanced design patterns, as scope and context play a fundamental role in modern JavaScript. Whether we&#8217;re talking about closures, object-orientation and inheritance, or various native implementations, context and scope play a significant role in all of them. If your goal is to master the JavaScript language and better understand all it encompasses then scope and context should be one of your starting points.
+It is important to understand these concepts before you begin to approach advanced design patterns, as scope and context play a fundamental role in modern JavaScript. Whether we're talking about closures, object-orientation and inheritance, or various native implementations, context and scope play a significant role in all of them. If your goal is to master the JavaScript language and better understand all it encompasses then scope and context should be one of your starting points.

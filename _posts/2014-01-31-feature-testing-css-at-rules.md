@@ -18,7 +18,7 @@ The _CSS Object Model (CSSOM)_ is a [W3C specification](http://dev.w3.org/csswg/
 
 Included in the CSSOM is the `CSSRule` [interface](https://developer.mozilla.org/en-US/docs/Web/API/CSSRule) which represents a single CSS at-rule. It acts as a high level abstraction for every type of CSS rule (charset, media, font-face, etc.), defining methods and properties common to all rule interfaces.
 
-Among the properties is a set of static [type constants](http://wiki.csswg.org/spec/cssom-constants#cssom-constants) that corresponds with the more specialized interface specific to each type of rule. A rule instance&#8217;s type is contained in the `type` property that returns the associated type constant. These constants are what make feature testing rule support possible.
+Among the properties is a set of static [type constants](http://wiki.csswg.org/spec/cssom-constants#cssom-constants) that corresponds with the more specialized interface specific to each type of rule. A rule instance's type is contained in the `type` property that returns the associated type constant. These constants are what make feature testing rule support possible.
 
 ## Feature Testing At-Rules
 
@@ -64,13 +64,13 @@ if('CSSKeyframesRule' in window){
 </pre>
 </div>
 
-It&#8217;s merely a matter of preference, both techniques are equally valid and will still require vendor prefixes when necessary.
+It's merely a matter of preference, both techniques are equally valid and will still require vendor prefixes when necessary.
 
 The fact that the CSSOM is standardized bodes well for cross-browser consistency. As of today, all major browsers, with the exception of IE8 and less, support the CSS object model including the `CSSRule` interface and the type constants.
 
 ## A Complete Solution
 
-We can simplify this approach even further by wrapping the solution in a function and offer a more usable API that doesn&#8217;t require the vendor prefixes or a pre-existing knowledge of the CSSOM. The code is as follows:
+We can simplify this approach even further by wrapping the solution in a function and offer a more usable API that doesn't require the vendor prefixes or a pre-existing knowledge of the CSSOM. The code is as follows:
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
