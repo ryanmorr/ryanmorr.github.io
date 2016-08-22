@@ -12,6 +12,9 @@ layout: default
                 {% if page.project %}
                     <li><i class="fa fa-github"></i><a href="{{ page.project }}">GitHub Project</a></li>
                 {% endif %}
+                {% if page.demo %}
+                    <li><i class="fa fa-hand-pointer-o"></i><a href="{{ page.demo }}">Demo</a></li>
+                {% endif %}
             </ul>
         </header>
         <section class="post-content">
