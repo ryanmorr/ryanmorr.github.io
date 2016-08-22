@@ -471,6 +471,7 @@ input[type="submit"]:hover {
 }
 
 #site-footer a {
+    margin: 0 15px;
     color: #a2a2a2;
     font-weight: normal;
     text-decoration: none;
