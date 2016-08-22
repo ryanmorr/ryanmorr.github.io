@@ -242,13 +242,6 @@ pre {
     border-bottom: 5px solid #6e7b82;
 }
 
-.note {
-    background-color:#dadbdf;
-    border-top: 5px solid #c8c9cf;
-    border-bottom: 5px solid #c8c9cf;
-    margin: 1.6em 0;
-}
-
 .error-code {
     font-size: 10rem;
     margin: 0;
@@ -551,6 +544,12 @@ input[type="submit"]:hover {
     margin-bottom: 2rem;
     padding-top: 2rem;
     border-top: #eee 1px solid;
+}
+
+.note {
+    background-color:#eee;
+    border: 1px solid #c8c9cf;
+    padding: 0 1em;
 }
 
 .button.share {

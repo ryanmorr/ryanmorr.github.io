@@ -20,5 +20,16 @@ layout: default
         <section class="post-content">
             {{ content }}
         </section>
+        {% if page.notes %}
+            <footer class="post-footer block">
+                {% for notes in page.notes %}
+                    {% for note in notes %}
+                        <div class="note">
+                            <p><strong>Update ({{ note[0] | date: "%m/%d/%Y" }})</strong> - {{ note[1] }}</p>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </footer>
+        {% endif %}
     </article>
 </main>
