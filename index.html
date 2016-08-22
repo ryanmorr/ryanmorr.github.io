@@ -4,7 +4,7 @@ title: Ryan Morr
 ---
 
 <main class="block">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
         <article class="post">
             <header class="post-header">
                 <h2 class="post-title"><a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a></h2>
@@ -14,14 +14,14 @@ title: Ryan Morr
             </section>
         </article>
     {% endfor %}
-</main>
 
-<nav class="pagination" role="pagination">
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-        <a class="button newer-posts" href="{{ paginator.previous_page_path }}"><i class="fa fa-angle-double-left"></i> Newer Posts</a>
-    {% endif %}
-    {% if paginator.next_page %}
-        <a class="button older-posts" href="{{ paginator.next_page_path }}">Older Posts <i class="fa fa-angle-double-right"></i></a>
-    {% endif %}
-</nav>
+    <nav class="pagination" role="pagination">
+        <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.previous_page %}
+            <a class="button newer-posts" href="{{ paginator.previous_page_path }}"><i class="fa fa-angle-double-left"></i> Newer Posts</a>
+        {% endif %}
+        {% if paginator.next_page %}
+            <a class="button older-posts" href="{{ paginator.next_page_path }}">Older Posts <i class="fa fa-angle-double-right"></i></a>
+        {% endif %}
+    </nav>
+</main>
