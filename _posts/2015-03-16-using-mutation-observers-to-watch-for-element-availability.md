@@ -3,9 +3,6 @@ layout: post
 title: Using Mutation Observers to Watch for Element Availability
 date: 2015-03-16
 project: https://github.com/ryanmorr/ready
-categories:
-  - Articles
-  - Projects
 tags:
   - DOM
   - JavaScript

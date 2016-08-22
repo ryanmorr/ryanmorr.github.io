@@ -3,15 +3,8 @@ layout: post
 title: Reinventing the Try/Catch Block
 date: 2013-09-23
 project: https://github.com/ryanmorr/try-catch
-categories:
-  - Articles
-  - Projects
 tags:
-  - Debugging
-  - Errors
-  - Experimental
   - JavaScript
-  - Performance
 ---
 
 The try/catch block is a unique construct, both in how it works and what it is capable of. Fundamentally, it is able to isolate one or more statements to capture and suppress any runtime errors that may be encountered as a result of execution. It is such a powerful construct that in a perfect world you would want to wrap everything in a try/catch block to provide simple and effective error trapping. However, due to concerns in performance critical situations, employing the construct is often frowned upon. But what if I told you there was a means of emulating the try/catch block without the concern for performance? This article will be exploring just such a method.

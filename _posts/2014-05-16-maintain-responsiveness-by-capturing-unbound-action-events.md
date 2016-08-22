@@ -3,12 +3,8 @@ layout: post
 title: Maintain Responsiveness by Capturing Unbound Action Events
 date: 2014-05-16
 project: https://github.com/ryanmorr/action-observer
-categories:
-  - Articles
-  - Projects
 tags:
   - DOM
-  - Event
   - JavaScript
   - UX
 ---

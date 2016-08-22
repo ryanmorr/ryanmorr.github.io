@@ -2,12 +2,8 @@
 layout: post
 title: Project Agnostic CSS Declaration Blocks
 date: 2014-08-21
-categories:
-  - Articles
 tags:
   - CSS
-  - CSS3
-  - UI
 ---
 
 Low specificity is key to good fundamental CSS design. Avoiding overly specific selectors and grouping similar characteristics helps to modularize your stylesheets resulting in greater portability and reusability of declaration blocks. This serves as an effective means to decoupling your CSS from your HTML. For this article, I will be focusing on some useful project agnostic declaration blocks, many of which form the basis of my CSS boilerplate given the ease in which they can be applied to any project without being too specific to any one project.

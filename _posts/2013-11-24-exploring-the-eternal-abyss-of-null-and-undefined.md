@@ -2,10 +2,7 @@
 layout: post
 title: Exploring the Eternal Abyss of Null and Undefined
 date: 2013-11-24
-categories:
-  - Articles
 tags:
-  - Fundamentals
   - JavaScript
   - Primitives
 ---

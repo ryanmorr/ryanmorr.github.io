@@ -6,9 +6,7 @@ categories:
   - Articles
 tags:
   - CSS
-  - CSS3
   - HTML
-  - UI
 ---
 
 To harness the most out of CSS classes is to take advantage of what truly is the unsung hero of advanced RIA development as it relates to the presentation layer. When we observe our markup, we find that various portions of the DOM may require styling influences on the initial page load as well as interaction events or cues to adjust its structure, positioning, visibility, state, and skin. For this, classes are the clear suitor as it brings flexibility, modularity, inheritance, and a dynamic and unobtrusive nature to the table.

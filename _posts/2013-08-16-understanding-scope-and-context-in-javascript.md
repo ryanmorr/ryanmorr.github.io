@@ -2,15 +2,8 @@
 layout: post
 title: Understanding Scope and Context in JavaScript
 date: 2013-08-16
-categories:
-  - Articles
 tags:
-  - Closures
-  - Context
-  - Design Patterns
-  - Fundamentals
   - JavaScript
-  - Scope
 ---
 
 JavaScript’s implementation of scope and context is a unique feature of the language, in part because it is so flexible. Functions can be adopted for various contexts and scope can be encapsulated and preserved. These concepts lend to some of the most powerful design patterns JavaScript has to offer. However, this is also a tremendous source of confusion amongst developers, and for good reason. The following is a comprehensive explanation of scope and context, the difference between them, and how various design patterns make use of them.

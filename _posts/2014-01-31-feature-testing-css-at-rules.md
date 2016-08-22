@@ -3,11 +3,8 @@ layout: post
 title: Feature Testing CSS At-Rules
 date: 2014-01-31
 project: https://github.com/ryanmorr/is-at-rule-supported
-categories:
-  - Articles
-  - Projects
 tags:
-  - CSSOM
+  - CSS
   - Feature Testing
   - JavaScript
 ---

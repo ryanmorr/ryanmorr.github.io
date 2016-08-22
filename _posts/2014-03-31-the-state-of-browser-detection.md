@@ -2,16 +2,9 @@
 layout: post
 title: The State of Browser Detection
 date: 2014-03-31
-categories:
-  - Articles
 tags:
-  - Browser Detection
-  - Bugs
   - Feature Testing
-  - Graceful Degradation
   - JavaScript
-  - Progressive Enhancement
-  - Tips
 ---
 
 Despite the progress client-side scripting has made in the last decade or so, it seems some bad practices are poised to never die. With the medium transitioning into a more mobile-centric world in recent years, an influx in bugs has many turning back to browser detection for a solution. History seems to repeat itself in this regard. It has long been my contention that browser detection should not and can not be relied upon. However, the validity of the use case has become difficult to dismiss, and the lack of an alternative leaves me with no other options and more than a little conflicted. For this article, I will be discussing the various facets of browser detection and offer some recommendations to maximize reliability.

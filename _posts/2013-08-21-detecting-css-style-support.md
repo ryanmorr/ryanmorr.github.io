@@ -8,11 +8,8 @@ categories:
   - Projects
 tags:
   - CSS
-  - CSS3
   - Feature Testing
   - JavaScript
-  - Polyfill
-  - Progressive Enhancement
 ---
 
 CSS tends to be in a constant phase of transition as new specifications are continuously proposed, drafted, and then left to the browsers for implementation. How and when a new feature is implemented is determined by the browser, often including their vendor prefix (-moz-, -webkit-, -o-, -ms-) to further dilute the feature. In fact, sometimes the W3C will define an official specification for a feature after one or more browsers have already implemented it. Despite the emergence of CSS3 in both support and usage over the last couple years, it is still very much in the early stages of standardization and implementation which is often changing and debated over. To help combat the confusion, the following article will focus on methods of determining support not just for styles but also their supported assignable values.

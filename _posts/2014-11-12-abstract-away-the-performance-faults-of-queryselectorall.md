@@ -3,9 +3,6 @@ layout: post
 title: Abstract Away the Performance Faults of querySelectorAll
 date: 2014-11-12
 project: https://github.com/ryanmorr/query
-categories:
-  - Articles
-  - Projects
 tags:
   - DOM
   - JavaScript

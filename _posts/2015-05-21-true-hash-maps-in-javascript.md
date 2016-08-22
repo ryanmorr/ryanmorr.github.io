@@ -2,11 +2,7 @@
 layout: post
 title: "True Hash Maps in JavaScript"
 date: 2015-05-21
-categories:
-  - Articles
 tags:
-  - Data
-  - Fundamentals
   - JavaScript
 ---
 

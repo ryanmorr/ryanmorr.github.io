@@ -2,13 +2,9 @@
 layout: post
 title: Determine HTML5 Element Support in JavaScript
 date: 2013-10-10
-categories:
-  - Articles
-  - Projects
 tags:
   - Feature Testing
-  - HTML
-  - HTML5
+  - DOM
   - JavaScript
 ---
 
