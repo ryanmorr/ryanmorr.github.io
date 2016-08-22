@@ -8,10 +8,10 @@ layout: default
             <h1 class="post-title">{{ page.title }}</h1>
             <ul class="meta clear">
                 <li><i class="fa fa-calendar"></i><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time></li>
+                <li><i class="fa fa-tags"></i>{{ page.tags | array_to_sentence_string }}</li>
                 {% if page.project %}
                     <li><i class="fa fa-github"></i><a href="{{ page.project }}">GitHub Project</a></li>
                 {% endif %}
-                <li><i class="fa fa-tags"></i>{{ page.tags | array_to_sentence_string }}</li>
             </ul>
         </header>
         <section class="post-content">
