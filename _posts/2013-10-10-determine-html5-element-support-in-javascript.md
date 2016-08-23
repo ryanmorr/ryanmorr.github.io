@@ -3,7 +3,7 @@ layout: post
 title: Determine HTML5 Element Support in JavaScript
 date: 2013-10-10
 project: https://github.com/ryanmorr/is-element-supported
-demo: ryanmorr.com/demos/is-element-supported
+demo: http://ryanmorr.com/demos/is-element-supported
 tags:
   - Feature Testing
   - DOM

@@ -3,7 +3,7 @@ layout: post
 title: Feature Testing CSS At-Rules
 date: 2014-01-31
 project: https://github.com/ryanmorr/is-at-rule-supported
-demo: ryanmorr.com/demos/is-at-rule-supported
+demo: http://ryanmorr.com/demos/is-at-rule-supported
 tags:
   - CSS
   - Feature Testing
