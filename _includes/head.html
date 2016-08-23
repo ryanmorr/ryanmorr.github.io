@@ -2,7 +2,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{{ page.title }}</title>
+    {% if page.title == "Ryan Morr" %}
+        <title>{{ page.title }}</title>
+    {% else %}
+        <title>{{ page.title }} | Ryan Morr</title>
+    {% endif %}
 
     <link rel="alternate" type="application/atom+xml" href="/feed.xml">
 
