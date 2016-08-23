@@ -629,6 +629,41 @@ input[type="submit"]:hover {
 }
 
 /*------------------------------------*\
+    Projects
+\*------------------------------------*/
+
+.project {
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: #eee 1px solid;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.project:last-child {
+    border-bottom: 0;
+}
+
+.project-title {
+    margin: 0;
+}
+
+.project-title a {
+    text-decoration: none;
+    transition: color ease 0.3s;
+}
+
+.project-title a:hover {
+    color: #85a1bd;
+}
+
+.project-description {
+    margin: 5px 0 0 0;
+}
+
+/*------------------------------------*\
     Pagination
 \*------------------------------------*/
 
