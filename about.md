@@ -3,8 +3,10 @@ layout: page
 title: About
 ---
 
-My name is Ryan Morr, I am a programmer residing in Barrie, Ontario, Canada with a real passion for everything related to front-end web development. I am a JavaScript fanatic, strong advocate for the open web, and although I wouldn't characterize myself as a designer, I do love to dabble in UI and UX design because nothing beats a well designed interface. 
+My name is Ryan Morr, I am a web developer residing in Barrie, Ontario, Canada with a real passion for everything related to front-end web development.
 
-I am a very proud Canadian, and as you can imagine, I don't just love hockey, it's my religion. I am also a huge movie buff, astronomy aficionado, fitness enthusiast, and part-time gamer.
+I am a JavaScript fanatic, strong advocate for the open web, and although I wouldn't characterize myself as a designer, I do love to dabble in UI and UX design because nothing beats a well designed interface. 
 
-This blog is dedicated to what I find interesting in front-end web development. I will be discussing different concepts, sharing my opinions and ideas, and releasing various open source projects I have undertaken. All of my code is dedicated to the public domain as described by the [Unlicense](http://unlicense.org/). That's just a fancy way of saying you can use my code anyway you want.
+I am a proud Canadian, as such, hockey is my religion. I'm also a huge movie buff, astronomy aficionado, fitness enthusiast, and an intense fantasy sports competitor.
+
+This blog is dedicated to my adventures in front-end web development. I will be discussing different concepts, opinions, and ideas as well as sharing various open source projects.
