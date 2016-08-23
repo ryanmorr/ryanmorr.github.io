@@ -8,6 +8,16 @@
         <title>{{ page.title }} | Ryan Morr</title>
     {% endif %}
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ryanmmorr">
+    <meta name="twitter:domain" content="ryanmorr.com">
+    <meta name="twitter:creator" content="@ryanmmorr">
+    <meta name="twitter:title" content="{{ page.title }} | Ryan Morr">
+    <meta name="twitter:image:src" content="/icon.png">
+    {% if page.twitterDescription %}
+        <meta name="twitter:description" content="{{ page.twitterDescription }}">
+    {% endif %}
+
     <link rel="alternate" type="application/atom+xml" href="/feed.xml">
 
     <link rel="shortcut icon" href="/icon.png">
