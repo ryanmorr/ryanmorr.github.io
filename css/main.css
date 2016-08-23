@@ -553,31 +553,6 @@ input[type="submit"]:hover {
     padding: 0 1em;
 }
 
-.button.share {
-    position: absolute;
-    top: 2rem;
-    right: 10px;
-    font-weight: bold;
-    background-color: #fff;
-    border-color: #4099FF;
-    color: #4099FF;
-    transition: color ease 0.3s, border ease 0.3s, background-color ease 0.3s;
-}
-
-.share i {
-    color: #4099FF;
-}
-
-.share:hover {
-    background-color: #4099FF;
-    border-color: #2f90ff;
-    color: #fff;
-}
-
-.share:hover i {
-    color: #fff;
-}
-
 .meta {
     display: block;
     float: none;
