@@ -112,7 +112,7 @@ These helper classes, derived from the [HTML5 Boilerplate](https://github.com/h5
 </pre>
 </div>
 
-The `hidden-accessible` class has the unique ability to mimic the effects of `display: none`, yet still be accessible to screen readers and possess the correct metrics. This is useful for retrieving the width and height of an element in JavaScript without it being visible or taking space in the layout.
+The `hidden-accessible` class has the unique ability to mimic the effects of `display: none`, yet still be accessible to screen readers and web crawlers.
 
 ## Disabling Elements
 
