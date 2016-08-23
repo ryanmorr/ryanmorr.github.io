@@ -10,12 +10,14 @@ url: "http://ryanmorr.com"
 
 markdown: kramdown
 permalink: /:title/
+repository: ryanmorr/ryanmorr.github.io
 paginate: 5
 paginate_path: "/page/:num/"
 
 gems:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-github-metadata
 
 exclude:
   - Gemfile
