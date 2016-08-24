@@ -612,9 +612,15 @@ input[type="submit"]:hover {
     margin-top: 4rem;
     margin-bottom: 4rem;
     padding-bottom: 4rem;
-    border-bottom: #eee 1px solid;
+    border-bottom: 1px #eee solid;
     word-break: break-word;
     hyphens: auto;
+}
+
+.projects-description {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px #eee solid;
 }
 
 .project:last-child {
