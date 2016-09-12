@@ -459,21 +459,45 @@ input[type="submit"]:hover {
     border-top: 5px solid #3f474b;
 }
 
-#site-footer p {
-    color: #a2a2a2;
-    font-size: 1.2rem;
+.footer-nav {
+    margin: 2rem 0 0 0;
 }
 
-#site-footer a {
-    margin: 0 15px;
-    color: #a2a2a2;
-    font-weight: normal;
+.footer-link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.footer-link a {
+    color: #c4c4c4;
     text-decoration: none;
-    transition: color ease 0.3s;
+    text-transform: lowercase;
 }
 
-#site-footer a:hover {
+.footer-link a::after {
+    content: " ";
+    display: block;
+    margin: .125rem auto 0;
+    width: 0;
+    height: .2rem;
+    border-radius: .2rem;
+    background: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    transition: all .4s ease;
+}
+
+.footer-link a:hover::after {
+    width: 100%;
+    background: #85a1bd;
+}
+
+.copyright {
     color: #fff;
+    opacity: 0.3;
+    padding-top: 1rem;
+    font-size: 1.2rem;
 }
 
 /*------------------------------------*\

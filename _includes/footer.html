@@ -1,19 +1,33 @@
 <footer id="site-footer">
     <div class="vertical">
         <div class="block">
-            <section>
-                <p class="footer-links">
-                    <a href="/about">About</a> |
-                    <a href="/">Articles</a> |
-                    <a href="/projects">Projects</a> |
-                    <a href="mailto:{{ site.email }}">Contact</a> |
-                    <a href="https://github.com/ryanmorr">GitHub</a> |
-                    <a href="http://codepen.io/ryanmorr/">CodePen</a> | 
-                    <a href="https://twitter.com/ryanmmorr">Twitter</a> | 
+            <nav class="footer-nav">
+                <div class="footer-link">
+                    <a href="/about">About</a>
+                </div>
+                <div class="footer-link">
+                    <a href="/">Articles</a>
+                </div>
+                <div class="footer-link">
+                    <a href="/projects">Projects</a>
+                </div>
+                <div class="footer-link">
+                    <a href="mailto:{{ site.email }}">Contact</a>
+                </div>
+                <div class="footer-link">
+                    <a href="https://github.com/ryanmorr">GitHub</a>
+                </div>
+                <div class="footer-link">
+                    <a href="http://codepen.io/ryanmorr/">CodePen</a>
+                </div>
+                <div class="footer-link">
+                    <a href="https://twitter.com/ryanmmorr">Twitter</a>
+                </div>
+                <div class="footer-link">
                     <a href="/feed.xml">Feed</a>
-                </p>
-            </section>
-            <p>Copyright &copy; {{ site.time | date: "%Y" }} {{ site.name }}.</p>
+                </div>
+            </nav>
+            <p class="copyright">Copyright &copy; {{ site.time | date: "%Y" }} {{ site.name }}.</p>
         </div>
     </div>
 </footer>
