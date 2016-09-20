@@ -18,7 +18,7 @@ Every function invocation has both a scope and a context associated with it. Fun
 
 A variable can be defined in either local or global scope, which establishes the variables' accessibility from different scopes during runtime. Any defined global variable, meaning any variable declared outside of a function body will live throughout runtime and can be accessed and altered in any scope. Local variables exist only within the function body of which they are defined and will have a different scope for every call of that function. There it is subject for value assignment, retrieval, and manipulation only within that call and is not accessible outside of that scope.
 
-JavaScript presently does not support block scope which is the ability to define a variable to the scope of an if statement, switch statement, for loop, or while loop. This means the variable will not be accessible outside the opening and closing curly braces of the block. Currently any defined variables inside a block are accessible outside the block. However, this is soon to change, the `let` keyword has officially been added to the ES6 specification. It can be used alternatively to the `var` keyword and supports the declaration of block scope local variables.
+ES6 (ES2015) introduced the `let` and `const` keywords that support the declaration of block scope local variables. This means the variable will be confined to the scope of a block statement such as an `if` statement or for `for` loop and will not be accessible outside the opening and closing curly braces of the block. This is contrary to `var` declarations which are accessible outside blocks they are defined in, except for functions.
 
 ## What is “this” Context
 
@@ -27,12 +27,12 @@ Context is most often determined by how a function is invoked. When a function i
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
 var obj = {
-    foo: function(){
-        alert(this === obj);    
+    foo: function() {
+        return this;   
     }
 };
 
-obj.foo(); // true
+obj.foo() === obj; // true
 </pre>
 </div>
 
@@ -40,7 +40,7 @@ The same principle applies when invoking a function with the `new` operator to c
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-function foo(){
+function foo() {
     alert(this);
 }
 
@@ -67,13 +67,13 @@ For each execution context there is a scope chain coupled with it. The scope cha
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-function first(){
+function first() {
     second();
-    function second(){
+    function second() {
         third();
-        function third(){
+        function third() {
             fourth();
-            function fourth(){
+            function fourth() {
                 // do something
             }
         }
@@ -95,15 +95,15 @@ Accessing variables outside of the immediate lexical scope creates a closure. In
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-function foo(){
+function foo() {
     var localVariable = 'private variable';
-    return function bar(){
+    return function() {
         return localVariable;
     }
 }
 
 var getLocalVariable = foo();
-getLocalVariable() // private variable
+getLocalVariable() // "private variable"
 </pre>
 </div>
 
@@ -111,10 +111,10 @@ One of the most popular types of closures is what is widely known as the _module
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-var Module = (function(){
+var Module = (function() {
     var privateProperty = 'foo';
 
-    function privateMethod(args){
+    function privateMethod(args) {
         // do something
     }
 
@@ -122,11 +122,11 @@ var Module = (function(){
 
         publicProperty: '',
 
-        publicMethod: function(args){
+        publicMethod: function(args) {
             // do something
         },
 
-        privilegedMethod: function(args){
+        privilegedMethod: function(args) {
             return privateMethod(args);
         }
     };
@@ -140,17 +140,17 @@ Another type of closure is what is called an immediately-invoked function expres
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-(function(window){
+(function(window) {
           
     var foo, bar;
 
-    function private(){
+    function private() {
         // do something
     }
 
     window.Module = {
 
-        public: function(){
+        public: function() {
             // do something 
         }
     };
@@ -167,7 +167,7 @@ These two methods inherent to all functions allow you to execute any function in
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-function user(firstName, lastName, age){
+function user(firstName, lastName, age) {
     // do something 
 }
 
@@ -183,11 +183,11 @@ ECMAScript 5 (ES5) introduced the `Function.prototype.bind` method that is used 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
 if(!('bind' in Function.prototype)){
-    Function.prototype.bind = function(){
-        var fn = this, 
-        context = arguments[0], 
-        args = Array.prototype.slice.call(arguments, 1);
-        return function(){
+    Function.prototype.bind = function() {
+        var fn = this;
+        var context = arguments[0];
+        var args = Array.prototype.slice.call(arguments, 1);
+        return function() {
             return fn.apply(context, args.concat([].slice.call(arguments)));
         }
     }
@@ -199,12 +199,12 @@ It is commonly used where context is commonly lost; object-orientation and event
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-function MyClass(){
+function Widget() {
     this.element = document.createElement('div');
     this.element.addEventListener('click', this.onClick.bind(this), false);
 }
 
-MyClass.prototype.onClick = function(e){
+Widget.prototype.onClick = function(e) {
     // do something
 };
 </pre>
@@ -225,14 +225,14 @@ This technique of adopting another object's methods also applies to object-orien
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-MyClass.prototype.init = function(){
-    // call the superclass init method in the context of the "MyClass" instance
-    MySuperClass.prototype.init.apply(this, arguments);
+SubClass.prototype.init = function(){
+    // call the superclass init method in the context of the "SubClass" instance
+    SuperClass.prototype.init.apply(this, arguments);
 }
 </pre>
 </div>
 
-By invoking the method of the superclass (`MySuperClass`) in the context of an instance of a subclass (`MyClass`), we can mimic the ability of calling a method's super to fully exploit this powerful design pattern.
+By invoking the method of the superclass (`SuperClass`) in the context of an instance of a subclass (`SubClass`), we can mimic the ability of calling a method's super to fully exploit this powerful design pattern.
 
 ## Conclusion
 
