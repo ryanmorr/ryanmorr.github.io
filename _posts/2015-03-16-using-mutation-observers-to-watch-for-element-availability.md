@@ -34,7 +34,7 @@ The solution supports detecting element readiness on the initial page load as we
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-(function(win){
+(function(win) {
     'use strict';
     
     var listeners = [], 
@@ -42,13 +42,13 @@ The solution supports detecting element readiness on the initial page load as we
     MutationObserver = win.MutationObserver || win.WebKitMutationObserver,
     observer;
     
-    function ready(selector, fn){
+    function ready(selector, fn) {
         // Store the selector and callback to be monitored
         listeners.push({
             selector: selector,
             fn: fn
         });
-        if(!observer){
+        if (!observer) {
             // Watch for changes in the document
             observer = new MutationObserver(check);
             observer.observe(doc.documentElement, {
@@ -60,17 +60,17 @@ The solution supports detecting element readiness on the initial page load as we
         check();
     }
         
-    function check(){
+    function check() {
         // Check the DOM for elements matching a stored selector
-        for(var i = 0, len = listeners.length, listener, elements; i &lt; len; i++){
+        for (var i = 0, len = listeners.length, listener, elements; i &lt; len; i++) {
             listener = listeners[i];
             // Query for elements matching the specified selector
             elements = doc.querySelectorAll(listener.selector);
-            for(var j = 0, jLen = elements.length, element; j &lt; jLen; j++){
+            for (var j = 0, jLen = elements.length, element; j &lt; jLen; j++) {
                 element = elements[j];
                 // Make sure the callback isn't invoked with the 
                 // same element more than once
-                if(!element.ready){
+                if (!element.ready) {
                     element.ready = true;
                     // Invoke the callback with the element
                     listener.fn.call(element, element);
@@ -90,7 +90,7 @@ The `ready` function accepts a selector string as the first argument and the cal
 
 <div class="code-block">
   <pre class="prettyprint lang-javascript">
-ready('.foo', function(element){
+ready('.foo', function(element) {
     // do something
 });
 </pre>
