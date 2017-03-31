@@ -59,8 +59,8 @@ This works without any issues, but nevertheless, the object still imposes restri
 <pre class="prettyprint lang-javascript">var map = {};
 var has = {}.hasOwnProperty;
 
-for(var key in map){
-    if(has.call(map, key)){
+for (var key in map) {
+    if (has.call(map, key)) {
         // do something
     }
 }
@@ -72,7 +72,7 @@ This can become a bit tedious after awhile. Thankfully, there is a better way.
 
 ## Bare Objects
 
-The secret to creating a true hash map is loosing the prototype all together, and the baggage that comes with it. To do this we can take advantage of the `Object.create` method [introduced in ES5](http://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.5). What's unique about this method is that you can explicitly define the prototype for a new object. For example, defining a plain object literal with a little more verbosity:
+The secret to creating a true hash map is loosing the prototype all together and the baggage that comes with it. To do this we can take advantage of the `Object.create` method [introduced in ES5](http://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.5). What's unique about this method is that you can explicitly define the prototype for a new object. For example, defining a plain object literal with a little more verbosity:
 
 <div class="code-block">
 
@@ -122,7 +122,7 @@ Better yet, those tedious `for ... in` loops become much simpler. We can finally
 
 <pre class="prettyprint lang-javascript">var map = Object.create(null);
 
-for(var key in map){
+for (var key in map) {
     // do something
 }
 </pre>
